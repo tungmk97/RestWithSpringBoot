@@ -1,0 +1,15 @@
+before_deploy: "-echo \"${DOCKER_PASSWORD}\" | docker login --username \"${DOCKER_USERNAME}\" --password-stdin"
+before_install: 
+  - "cd RestSpringBootUdemy/"
+  - "echo \"We are in the Docker Folder!\""
+deploy: 
+  privider: script
+  script: "docker push monkey97/mysql-rest-with-spring-boot-udemy; docker push monkey97/rest-with-spring-boot-udemy;"
+  true: 
+    branch: master
+language: bash
+notifications: 
+  emails: false
+script: "docker-compose build"
+services: docker
+  
