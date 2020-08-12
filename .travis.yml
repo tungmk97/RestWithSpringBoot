@@ -1,4 +1,4 @@
-before_deploy: "-echo \"${DOCKER_PASSWORD}\" | docker login --username \"${DOCKER_USERNAME}\" --password-stdin"
+before_deploy: "echo \"${DOCKER_PASSWORD}\" | docker login --username \"${DOCKER_USERNAME}\" --password-stdin"
 before_install: 
   - "cd RestSpringBootUdemy/"
   - "echo \"We are in the Docker Folder!\""
